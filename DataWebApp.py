@@ -65,15 +65,16 @@ def create_wkipidea_text_file(name):
         pass
     st.header(hading)
     st.write(data)
-    return hading+'\n\n'+data
+    return hading,data
 
-Text_data=''
 def main():
 
     # user input
     name=st.text_input("Enter name which data you whant",value=None)
     if name is not None:
-        Text_data=create_wkipidea_text_file(name)
+        hading,Text_data=create_wkipidea_text_file(name)
+        st.download_button("Download", Text_data, hading+'.txt', "text/plain")
+
     
 
 if __name__ == "__main__":
