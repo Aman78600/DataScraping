@@ -70,7 +70,7 @@ def create_wkipidea_text_file(name):
 def main():
 
     # user input
-    name=st.text_input("Enter name which data you whant",value=None)
+    name=st.text_input("Enter name which data you want.",value=None)
     if name is not None:
         hading,Text_data=create_wkipidea_text_file(name)
         st.download_button("Download", Text_data, hading+'.txt', "text/plain")
